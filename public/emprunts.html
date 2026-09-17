@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emprunts - Bibliotheque de quartier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Tableau de bord</a>
+    <a href="livres.html">Livres</a>
+    <a href="adherents.html">Adherents</a>
+    <a href="emprunts.html">Emprunts</a>
+  </nav>
+
+  <main>
+    <h1>Emprunts</h1>
+
+    <h2>Nouvel emprunt</h2>
+    <form id="form-emprunt">
+      <label for="adherent_id">Adherent</label>
+      <select id="adherent_id" required>
+        <option value="">-- Choisir --</option>
+      </select>
+
+      <label for="livre_id">Livre disponible</label>
+      <select id="livre_id" required>
+        <option value="">-- Choisir --</option>
+      </select>
+
+      <label for="date_retour_prevue">Date de retour prevue</label>
+      <input type="date" id="date_retour_prevue" required>
+
+      <button type="submit">Enregistrer l'emprunt</button>
+      <p class="message-erreur" id="erreur-emprunt"></p>
+    </form>
+
+    <h2>Emprunts en cours</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Adherent</th>
+          <th>Livre</th>
+          <th>Date d'emprunt</th>
+          <th>Retour prevu</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="liste-emprunts-cours">
+        <tr><td colspan="5">Chargement...</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Emprunts en retard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Adherent</th>
+          <th>Livre</th>
+          <th>Date d'emprunt</th>
+          <th>Retour prevu</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="liste-emprunts-retard">
+        <tr><td colspan="5">Chargement...</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/emprunts.js"></script>
+</body>
+</html>

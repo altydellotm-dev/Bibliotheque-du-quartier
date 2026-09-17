@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livres - Bibliotheque de quartier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Tableau de bord</a>
+    <a href="livres.html">Livres</a>
+    <a href="adherents.html">Adherents</a>
+    <a href="emprunts.html">Emprunts</a>
+  </nav>
+
+  <main>
+    <h1>Livres</h1>
+
+    <h2>Ajouter un livre</h2>
+    <form id="form-livre">
+      <label for="titre">Titre</label>
+      <input type="text" id="titre"  placeholder="Ex: Une saison au Congo" required>
+
+      <label for="auteur_id">Auteur</label>
+      <select id="auteur_id">
+        <option value="">-- Aucun --</option>
+      </select>
+
+      <label for="annee_publication">Annee de publication</label>
+      <input type="number" id="annee_publication" placeholder="Ex: 2001" required>
+
+      <button type="submit">Ajouter le livre</button>
+      <p class="message-erreur" id="erreur-livre"></p>
+    </form>
+
+    <h2>Ajouter un auteur</h2>
+    <form id="form-auteur">
+      <label for="nom-auteur">Nom</label>
+      <input type="text" id="nom-auteur" placeholder="Ex: Taty LOUTARD" required>
+
+      <label for="nationalite">Nationalite</label>
+      <input type="text" id="nationalite" placeholder="Ex: Congolaise">
+
+      <button type="submit">Ajouter l'auteur</button>
+      <p class="message-erreur" id="erreur-auteur"></p>
+    </form>
+
+    <h2>Liste des livres</h2>
+    <input type="text" id="recherche-livre" placeholder="Rechercher un titre ou un auteur...">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Auteur</th>
+          <th>Annee</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody id="liste-livres">
+        <tr><td colspan="4">Chargement...</td></tr>
+      </tbody>
+    </table>
+    <div id="pagination-livres"></div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/livres.js"></script>
+</body>
+</html>
